@@ -3,7 +3,7 @@
 <% if @projects.present? %>
   <% @projects.each do |project| %>
   
-    <%= content_tag :div, :id => "project_content", :class => cycle(:odd, :even)  do %>
+    <%= content_tag :div, :id => "project_content", :class => cycle(:odd, :even) do %>
       <% if user_signed_in? %>
         <% unless project.users.include? current_user %>
           <%= link_to "Faço parte deste projeto", [:member_add, project], :class => "project_user", :method => :get %>

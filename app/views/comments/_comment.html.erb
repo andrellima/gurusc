@@ -1,4 +1,4 @@
-<%= div_for comment, :class => "comment" do %>
+<%= div_for comment, :class => cycle(:odd, :even) do %>
   <div class="author">
     <div class="avatar"><%= gravatar_image_tag comment.email %></div>
     <div class="meta">

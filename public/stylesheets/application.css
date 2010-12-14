@@ -50,6 +50,7 @@ div.field, div.actions {
 }
 div.field textarea {
   width: 600px;
+  padding: 5px;
 }
 
 #notice {
@@ -92,6 +93,10 @@ div#wrapper {
 }
 
 /* Topo */
+
+#login {
+  margin-top: 5px;
+}
 
 div#header {
   height: 126px;
@@ -175,7 +180,7 @@ div#home_post {
 
 div#column1 {
   float: left;
-  width: 630px;
+  width: 700px;
 }
 
 div#column1 h2 {
@@ -191,9 +196,15 @@ div#column1 .post_info {
 }
 
 div#column2 {
-  float: left;
-  width: 270px;
+  float: right;
+  text-align: right;
+  width: 200px;
   margin-left: 20px;
+}
+
+div#column2 form input {
+  width: 150px;
+  padding: 2px;
 }
 
 div#column2 form, div#column2 ul {
@@ -201,7 +212,7 @@ div#column2 form, div#column2 ul {
 }
 
 div.comment {
-  padding: 20px 0 20px 0;
+  padding: 10px 10px 10px 10px;
 }
 
 /* footer */

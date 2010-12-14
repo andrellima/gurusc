@@ -1,9 +1,9 @@
 <div id="column1">
 
-  <h3><%= @post.title %></h3>
+  <h2><%= @post.title %></h2>
     <div class="post_info">
       <p>por <%= link_to @post.author.full_name, user_path(@post.author_id) %>
-      em <%= @post.created_at.strftime("%d de %B") %></p>
+      em <%=l @post.created_at, :format => :post %></p>
     </div>
 
   <div id="post">
@@ -11,24 +11,20 @@
   </div>
 
   <div class="post_info">
-    Em
-    <% @post.category_ids.each do |id| %>
-      <%= link_to p_category(id), posts_path(:category_id => (id)) %>
+    Categorias:
+    <% number_of_categories = @post.categories.count %>
+    <% @post.categories.each do |category| %>
+      <% number_of_categories -= 1 %>
+      <%= link_to category.name, posts_path(:category_id => category.id) %><%= number_of_categories > 0 ? ',' : ';' %>
     <% end %>
   </div>
   
-  <hr />
-
   <div id="comments">
-
     <h3><%= pluralize(@post.comments.count, ' comentário', ' comentários') %></h3>
-
     <%= render @post.comments if @post.comments.any? %>
-      
   </div>
 
   <%= render "comments/form", :post => @post, :comment => Comment.new %>
   
 </div>
-
 <%= render "sidebar" %>

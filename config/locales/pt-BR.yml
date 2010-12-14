@@ -17,6 +17,7 @@ pt-BR:
       default: "%A, %d de %B de %Y, %H:%M h"
       short: "%d/%m, %H:%M h"
       long: "%A, %d de %B de %Y às %Hh%Mmin"
+      post: "%d de %B de %Y ás %Hh%Mmin"
     am: ''
     pm: ''
   
@@ -202,6 +203,7 @@ pt-BR:
  
   errors:
     messages:
+      check_all: "Cheque se todos os dados foram corretamente preenchidos."
       not_found: "não encontrado"
       already_confirmed: "já foi confirmado"
       not_locked: "não foi bloqueado"

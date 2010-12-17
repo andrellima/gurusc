@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   after_filter  :user_save, :only => [:member_remove, :member_add]
 
   def index
-    @projects = Project.all
+    @projects = Project.order('name ASC')
     respond_with @projects
   end
 

@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @users = User.all
+    @users = User.order('full_name ASC')
     respond_with @users
   end
 

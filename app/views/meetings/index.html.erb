@@ -4,7 +4,7 @@
 
   <% @meetings.each do |meeting| %>
   
-    <%= content_tag :div, :id => "sub_content" do %>
+    <%= content_tag :div, :class => "sub_content" do %>
     
       <%= content_tag :div, :class => "meeting_image" do %>
         <%= image? meeting %>
@@ -15,12 +15,14 @@
           <%= print_present meeting.local, "Local" %>
         </p>
       <% end %>
-      
-      <h3><%= meeting.title %></h3>
-      
-      <p><%= l(meeting.date, :format => :long) %><%= " por #{meeting.autor}" if meeting.autor.present? %></p><br />
-      
-      <p><%= textilize meeting.description %></p>
+      <div class ="meeting_description">
+        <h3><%= meeting.title %></h3>
+
+        <p><%= l(meeting.date, :format => :long) %><%= " por #{meeting.autor}" if meeting.autor.present? %></p><br />
+
+        <p><%= textilize meeting.description %></p>
+      </div>
+      <hr />
 
     <% end %>
     

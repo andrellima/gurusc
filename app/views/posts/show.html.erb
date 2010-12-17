@@ -12,17 +12,15 @@
 
   <div class="post_info">
     Categorias:
-    <% number_of_categories = @post.categories.count %>
-    <% @post.categories.each do |category| %>
-      <% number_of_categories -= 1 %>
-      <%= link_to category.name, posts_path(:category_id => category.id) %><%= number_of_categories > 0 ? ',' : ';' %>
-    <% end %>
+    <%= (@post.categories.map { |category| link_to category.name, posts_path(:category_id => category.id) }.join(',') + ';').html_safe %>
   </div>
   
   <div id="comments">
     <h3><%= pluralize(@post.comments.count, ' comentário', ' comentários') %></h3>
     <%= render @post.comments if @post.comments.any? %>
   </div>
+
+  <h3>O que você acha?</h3><br />
 
   <%= render "comments/form", :post => @post, :comment => Comment.new %>
   

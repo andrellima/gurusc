@@ -15,12 +15,7 @@
 
     <div class="post_info">
       Categorias:
-      <% number_of_categories = post.categories.count %>
-      <% post.categories.each do |category| %>
-        <% number_of_categories -= 1 %>
-        <%= link_to category.name, posts_path(:category_id => category.id) %><%= number_of_categories > 0 ? ',' : ';' %>
-      <% end %>
-      <p><%= pluralize(post.comments.count, ' comentário', ' comentários') + ';' %></p>
+      <%= (post.categories.map { |category| link_to category.name, posts_path(:category_id => category.id) }.join(', ') + ';').html_safe %>
     </div>
   <% end %>
 

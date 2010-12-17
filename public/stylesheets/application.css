@@ -2,12 +2,24 @@
 
 /* basic */
 ul { list-style: none; }
-.odd { background-color: #C6DBC1; }
-.even { background-color: #FFF; }
+.odd { 
+  background-color: #C6DBC1; 
+  margin: 5px 0 5px 0; 
+  border:0px solid;
+  border-radius:15px;
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+}
+.even { background-color: #FFF; margin: 5px 0 5px 0; }
 .left { float: left; }
 .right { float: right; }
+.full-width { width: 100%; }
+.green { background-color: green; }
 
 /* misc */
+html, body {
+  height: 100%;
+}
 body {
   font-size: 16px;
   font-family: Bitstream Charter, FreeSerif, Georgia, Times New Roman, serif;
@@ -16,6 +28,18 @@ body {
   color: black;
   background-color: #FFF !important;
   text-align: center;
+}
+
+div#wrapper {
+  text-align: left;
+  margin: 0 auto;
+  min-height: 100%;
+  width: 920px;
+  overflow: hidden;
+  position: relative;
+}
+* html #wrapper {
+  height: 100%;
 }
 
 hr {
@@ -45,11 +69,18 @@ pre {
   font-size: 11px;
 }
 
-div.field, div.actions {
+.submit, .button {
   margin-bottom: 10px;
+  padding: 3px 7px 3px 7px;
+}
+div.field {
+  margin: 0 0 10px 0;
+}
+input {
+  margin: 2px 0 0 0;
+  padding: 2px;
 }
 div.field textarea {
-  width: 600px;
   padding: 5px;
 }
 
@@ -84,17 +115,10 @@ div.field textarea {
   margin: 0 0 0 10px;
 }
 
-div#wrapper {
-  text-align: left;
-  margin: 0 auto;
-  width: 920px;
-  overflow: hidden;
-  position: relative;
-}
-
 /* Topo */
 
 #login {
+  font-size: 14px;
   margin-top: 5px;
 }
 
@@ -135,17 +159,13 @@ div#header a {
 div#content {
   float: left;
   width: 920px;
-  margin: 20px 0 20px 0;
+  padding-bottom: 30px;
+  margin: 20px 0 30px 0;
   background-color: white;
 }
 
 div#content h2 {
   margin-bottom: 15px;
-}
-div#sub_content {
-  width: 100%;
-  float: left;
-  margin-bottom: 20px
 }
 
 div#home_post {
@@ -159,15 +179,15 @@ div.note {
   font-size: 25px;
 }
 
-div#main_content_home {
+div#site_column_left {
   float: left;
   width: 570px;
 }
 
-div#main_content_home p {
+div#site_column_left p {
   margin-bottom: 10px;
 }
-div#right_content {
+div#site_column_right {
   float: left;
   width: 330px;
   margin: 0 0 20px 20px;
@@ -211,16 +231,48 @@ div#column2 form, div#column2 ul {
   margin-bottom: 15px;
 }
 
+/* Comment */
+
 div.comment {
-  padding: 10px 10px 10px 10px;
+  padding: 10px;
+}
+div.comment .avatar {
+  display: inline-block;
+  padding: 0 5px 5px 0;
+}
+div.comment .meta {
+  vertical-align: top;
+  display: inline-block;
+}
+
+/* Contact */
+#new_contact textarea {
+  width: 100%;
+  height: 150px;
+}
+
+/* New user */
+#new_user {
+  float: left;
+  width: 250px;
+}
+
+#wrapper-login {
+  font-size: 16px;
+  margin: 0 auto;
+  width: 215px;
+  margin-top: 40px;
 }
 
 /* footer */
 div#footer {
   float: left;
+  font-size: 14px;
   width: 920px;
   text-align: center;
-  margin-bottom: 20px
+  padding: 20px 0 10px 0;
+  position: absolute;
+  bottom: 0;
 }
 
 /* Admin */
@@ -244,10 +296,14 @@ div#sidebar {
 
 /*Meetings*/
 
+div.sub_content {
+  width: 100%;
+  margin-bottom: 40px;
+}
 div.meeting_image {
   width: 330px;
-  float: left;
-  margin: 0 20px 0 0;
+  display: inline-block;
+  padding: 15px 15px 10px 15px;
 }
 
 div.meeting_image p {
@@ -256,6 +312,12 @@ div.meeting_image p {
 
 div.meeting_image p a {
   margin: 0 5px 0 5px;
+}
+div.meeting_description {
+  width: 555px;
+  vertical-align: top;
+  padding-top: 15px;
+  display: inline-block;
 }
 
 /* User */
@@ -336,7 +398,7 @@ div.show_user .city {
 
 div#project_content {
   float: left;
-  width: 920px;
+  width: 900px;
   padding: 5px 10px 10px 10px;
 }
 
